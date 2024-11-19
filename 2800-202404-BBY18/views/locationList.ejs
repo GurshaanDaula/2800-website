@@ -1,0 +1,36 @@
+<%- include("templates/headerAuthenticated") %>
+<!-- Link to location list csss -->
+<head>
+    <link rel="stylesheet" href="/locationList.css">
+</head>
+
+    <div class="container">
+        <h1>Location List</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% locations.forEach(location => { %>
+                    <tr>
+                        <td><%= location.name %></td>
+                        <td><%= location.location %></td>
+                        <td><%= location.description %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <div class="back-button-container">
+        <a href="/addLocation" class="btn btn-primary">Add Location</a>
+        <button class="button back-button" onclick="window.history.back()">Back</button>
+    </div>
+
+<br>
+<br>
+
+<%- include('templates/footerAuthenticatedOrg') %>
